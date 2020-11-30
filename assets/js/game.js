@@ -5,12 +5,15 @@ var playerAttack = 10;
 // Log multiple items at once like this
 console.log(playerName, playerAttack, playerHealth);
 
-var enemyName = "Roberto";
+var enemyNames = ["Roberto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
 // created function
-var fight = function() {
+var fight = function(enemyName) {
+    
+
+
     // Alert players that they are starting the round
     window.alert("Welcome to Robot Gladiators!");
 
@@ -23,7 +26,7 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
     // removed enemy's health by subtracting the amount set in the playerAttack
     enemyHealth = enemyHealth - playerAttack;
     console.log(
-        playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " Health remaining."
+        playerName + " attacked " + enemyName + ". " + enemyName+ " now has " + enemyHealth + " Health remaining."
     );
 
     // check enemy's health
@@ -68,4 +71,6 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
 }
 
 // executed function
-fight();
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
